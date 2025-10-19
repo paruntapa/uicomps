@@ -1,7 +1,65 @@
+'use client'
+
 import './pattradhara.css';
-import React from 'react'
+import React, { useEffect } from 'react'
+import gsap from 'gsap';
+import { lockFont } from './lock';
 
 const page = () => {
+
+    useEffect(() => {
+
+        const folders = document.querySelectorAll(".folder");
+        const folderWrappers = document.querySelectorAll(".folder-wrapper");
+
+        let isMobile = window.innerWidth < 1000;
+
+        const setInitialPosition = () => {
+            gsap.set(folderWrappers, {y: isMobile ? 0 : 25 });
+        }
+
+        folders.forEach((folder, index) => {
+            const previewImages = folder.querySelectorAll(".folder-preview-img");
+
+            folder.addEventListener("mouseenter", () => {
+                if (isMobile) return;
+
+                folders.forEach((siblingFolder) => {
+                    if (siblingFolder !== folder) {
+                        siblingFolder.classList.add("disabled");
+                    }
+                });
+
+                gsap.to(folderWrappers[index], {
+                    y: 0,
+                    duration: 0.25,
+                    ease: "back.out(1.7)"
+                })
+
+                previewImages.forEach((img, imgIndex) => {
+                    let rotation;
+                    if (imgIndex === 0) {
+                        rotation = gsap.utils.random(-20, -10);
+                    } else if (imgIndex === 1) {
+                        rotation = gsap.utils.random(-10, 10);
+                    } else {
+                        rotation = gsap.utils.random(10, 20);
+                    }
+
+                    gsap.to( img, {
+                        y: "-100%",
+                        rotation: rotation,
+                        duration: 0.25,
+                        ease: "back.out(1.7)",
+                        delay: imgIndex * 0.025
+                    });
+                });
+            });
+        });
+
+    }, [])
+
+
   return (
     <div>
     <nav>
@@ -9,7 +67,7 @@ const page = () => {
         <p>Experiment 6028</p>
     </nav>
 
-    <div className='folders text-black'>
+    <div className={`folders text-black ${lockFont.className}`}>
         <div className='row'>
             <div className='folder variant-1'>
                 <div className='folder-preview'>

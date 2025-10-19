@@ -62,7 +62,7 @@ nav {
     flex: 2;
 }
 
-.row:nth-child(2) .folder:nth-child(1) {
+.row:nth-child(2) .folder:nth-child(2) {
     flex: 3;
 }
 
@@ -168,5 +168,53 @@ nav {
 .folder.disabled p,
 .folder.disabled h1
 {
-    color: rgb(212, 212, 212);
+    color: rgb(0, 0, 0);
+}
+
+.row:nth-child(1) {
+    bottom: -13rem;
+}
+
+.row:nth-child(2) {
+    bottom: -7.5rem;
+}
+
+.row:nth-child(3) {
+    bottom: -2rem;
+}
+
+@media (max-width: 1000px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .row {
+        flex-direction: column;
+        bottom: 0 !important;
+    }
+
+    .folder {
+        margin-bottom: -0.5rem;
+    }
+
+    .folder-preview {
+        display: none;
+    }
+
+    .folder-name {
+        padding: 0 2rem 2rem;
+    }
+
+    .row:nth-child(2) .folder.variant-2 .folder-index,
+    .row:nth-child(2) .folder.variant-2 .folder-index::after,
+    .row:nth-child(2) .folder.variant-2 .folder-name {
+        background-color: rgb(171, 171, 171);
+    }
+
+    .row:nth-child(2) .folder.variant-3 .folder-index,
+    .row:nth-child(2) .folder.variant-3 .folder-index::after,
+    .row:nth-child(2) .folder.variant-3 .folder-name {
+        background-color: rgb(212, 212, 212);
+    }
+
 }
