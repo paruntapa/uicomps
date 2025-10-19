@@ -1,0 +1,102 @@
+import './pattradhara.css';
+import React from 'react'
+
+const page = () => {
+  return (
+    <div>
+    <nav>
+        <p>Design Ledger</p>
+        <p>Experiment 6028</p>
+    </nav>
+
+    <div className='folders text-black'>
+        <div className='row'>
+            <div className='folder variant-1'>
+                <div className='folder-preview'>
+                    <div className='folder-preview-img'><img src="./imgs/gojo.jpeg" alt="gojo" /></div>
+                    <div className='folder-preview-img'><img src="./imgs/zenin.jpeg" alt="zenin" /></div>
+                    <div className='folder-preview-img'><img src="./imgs/yuji.jpeg" alt="yuji" /></div>
+
+                </div>
+                <div className='folder-wrapper'>
+                    <div className='folder-index'><p>01</p></div>
+                    <div className='folder-name'><h1>JJK</h1></div>
+
+                </div>
+            </div>
+            <div className='folder variant-2'>
+                <div className='folder-preview'>
+                    <div className='folder-preview-img'><img src="./imgs/kakashi.jpeg" alt="kakashi" /></div>
+                    <div className='folder-preview-img'><img src="./imgs/uchihas.jpeg" alt="itachi" /></div>
+                    <div className='folder-preview-img'><img src="./imgs/pain.jpeg" alt="pain" /></div>
+
+                </div>
+                <div className='folder-wrapper'>
+                    <div className='folder-index'><p>02</p></div>
+                    <div className='folder-name'><h1>Naruto</h1></div>
+
+                </div>
+            </div>
+        </div>
+        <div className='row'>
+            <div className='folder variant-2'>
+                <div className='folder-preview'>
+                    <div className='folder-preview-img'><img src="./imgs/rumbling.jpeg" alt="rumbling" /></div>
+                    <div className='folder-preview-img'><img src="./imgs/mikasa.jpeg" alt="mikasa" /></div>
+                    <div className='folder-preview-img'><img src="./imgs/levi.jpeg" alt="levi" /></div>
+
+                </div>
+                <div className='folder-wrapper'>
+                    <div className='folder-index'><p>03</p></div>
+                    <div className='folder-name'><h1>Attack on Titan</h1></div>
+
+                </div>
+            </div>
+            <div className='folder variant-3'>
+                <div className='folder-preview'>
+                    <div className='folder-preview-img'><img src="./imgs/makima.jpeg" alt="makima" /></div>
+                    <div className='folder-preview-img'><img src="./imgs/aki.jpeg" alt="aki" /></div>
+                    <div className='folder-preview-img'><img src="./imgs/powerdenji.jpeg" alt="powerdenji" /></div>
+
+                </div>
+                <div className='folder-wrapper'>
+                    <div className='folder-index'><p>04</p></div>
+                    <div className='folder-name'><h1>Chainsaw Man</h1></div>
+
+                </div>
+            </div>
+        </div>
+        <div className='row'>
+            <div className='folder variant-1'>
+                <div className='folder-preview'>
+                    <div className='folder-preview-img'><img src="./imgs/blue.jpeg" alt="blue" /></div>
+                    <div className='folder-preview-img'><img src="./imgs/lionhert.jpeg" alt="lionhert" /></div>
+                    <div className='folder-preview-img'><img src="./imgs/subaruemelia.jpeg" alt="subaruemelia" /></div>
+
+                </div>
+                <div className='folder-wrapper'>
+                    <div className='folder-index'><p>05</p></div>
+                    <div className='folder-name'><h1>Re:Zero</h1></div>
+
+                </div>
+            </div>
+            <div className='folder variant-2'>
+                <div className='folder-preview'>
+                    <div className='folder-preview-img'><img src="./imgs/suzaku.jpeg" alt="suzaku" /></div>
+                    <div className='folder-preview-img'><img src="./imgs/laluach2.jpeg" alt="laluach2" /></div>
+                    <div className='folder-preview-img'><img src="./imgs/kellen.jpeg" alt="kellen" /></div>
+
+                </div>
+                <div className='folder-wrapper'>
+                    <div className='folder-index'><p>06</p></div>
+                    <div className='folder-name'><h1>Code Geass</h1></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  )
+}
+
+export default page
