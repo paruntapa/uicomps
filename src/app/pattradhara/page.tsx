@@ -4,8 +4,9 @@ import './pattradhara.css';
 import React, { useEffect } from 'react'
 import gsap from 'gsap';
 import { lockFont } from './lock';
+import Image from 'next/image';
 
-const page = () => {
+const usePage = () => {
 
     useEffect(() => {
 
@@ -112,9 +113,9 @@ const page = () => {
         <div className='row'>
             <div className='folder variant-1'>
                 <div className='folder-preview'>
-                    <div className='folder-preview-img'><img src="./imgs/gojo.jpeg" alt="gojo" /></div>
-                    <div className='folder-preview-img'><img src="./imgs/zenin.jpeg" alt="zenin" /></div>
-                    <div className='folder-preview-img'><img src="./imgs/yuji.jpeg" alt="yuji" /></div>
+                    <div className='folder-preview-img'><Image src="./imgs/gojo.jpeg" alt="gojo" /></div>
+                    <div className='folder-preview-img'><Image src="./imgs/zenin.jpeg" alt="zenin" /></div>
+                    <div className='folder-preview-img'><Image src="./imgs/yuji.jpeg" alt="yuji" /></div>
 
                 </div>
                 <div className='folder-wrapper'>
@@ -125,9 +126,9 @@ const page = () => {
             </div>
             <div className='folder variant-2'>
                 <div className='folder-preview'>
-                    <div className='folder-preview-img'><img src="./imgs/kakashi.jpeg" alt="kakashi" /></div>
-                    <div className='folder-preview-img'><img src="./imgs/uchihas.jpeg" alt="itachi" /></div>
-                    <div className='folder-preview-img'><img src="./imgs/pain.jpeg" alt="pain" /></div>
+                    <div className='folder-preview-img'><Image src="./imgs/kakashi.jpeg" alt="kakashi" /></div>
+                    <div className='folder-preview-img'><Image src="./imgs/uchihas.jpeg" alt="itachi" /></div>
+                    <div className='folder-preview-img'><Image src="./imgs/pain.jpeg" alt="pain" /></div>
 
                 </div>
                 <div className='folder-wrapper'>
@@ -140,9 +141,9 @@ const page = () => {
         <div className='row'>
             <div className='folder variant-2'>
                 <div className='folder-preview'>
-                    <div className='folder-preview-img'><img src="./imgs/rumbling.jpeg" alt="rumbling" /></div>
-                    <div className='folder-preview-img'><img src="./imgs/mikasa.jpeg" alt="mikasa" /></div>
-                    <div className='folder-preview-img'><img src="./imgs/levi.jpeg" alt="levi" /></div>
+                    <div className='folder-preview-img'><Image src="./imgs/rumbling.jpeg" alt="rumbling" /></div>
+                    <div className='folder-preview-img'><Image src="./imgs/mikasa.jpeg" alt="mikasa" /></div>
+                    <div className='folder-preview-img'><Image src="./imgs/levi.jpeg" alt="levi" /></div>
 
                 </div>
                 <div className='folder-wrapper'>
@@ -153,9 +154,9 @@ const page = () => {
             </div>
             <div className='folder variant-3'>
                 <div className='folder-preview'>
-                    <div className='folder-preview-img'><img src="./imgs/makima.jpeg" alt="makima" /></div>
-                    <div className='folder-preview-img'><img src="./imgs/aki.jpeg" alt="aki" /></div>
-                    <div className='folder-preview-img'><img src="./imgs/powerdenji.jpeg" alt="powerdenji" /></div>
+                    <div className='folder-preview-img'><Image src="./imgs/makima.jpeg" alt="makima" /></div>
+                    <div className='folder-preview-img'><Image src="./imgs/aki.jpeg" alt="aki" /></div>
+                    <div className='folder-preview-img'><Image src="./imgs/powerdenji.jpeg" alt="powerdenji" /></div>
 
                 </div>
                 <div className='folder-wrapper'>
@@ -168,9 +169,9 @@ const page = () => {
         <div className='row'>
             <div className='folder variant-1'>
                 <div className='folder-preview'>
-                    <div className='folder-preview-img'><img src="./imgs/blue.jpeg" alt="blue" /></div>
-                    <div className='folder-preview-img'><img src="./imgs/lionhert.jpeg" alt="lionhert" /></div>
-                    <div className='folder-preview-img'><img src="./imgs/subaruemelia.jpeg" alt="subaruemelia" /></div>
+                    <div className='folder-preview-img'><Image src="./imgs/blue.jpeg" alt="blue" /></div>
+                    <div className='folder-preview-img'><Image src="./imgs/lionhert.jpeg" alt="lionhert" /></div>
+                    <div className='folder-preview-img'><Image src="./imgs/subaruemelia.jpeg" alt="subaruemelia" /></div>
 
                 </div>
                 <div className='folder-wrapper'>
@@ -181,9 +182,9 @@ const page = () => {
             </div>
             <div className='folder variant-2'>
                 <div className='folder-preview'>
-                    <div className='folder-preview-img'><img src="./imgs/suzaku.jpeg" alt="suzaku" /></div>
-                    <div className='folder-preview-img'><img src="./imgs/laluach2.jpeg" alt="laluach2" /></div>
-                    <div className='folder-preview-img'><img src="./imgs/kellen.jpeg" alt="kellen" /></div>
+                    <div className='folder-preview-img'><Image src="./imgs/suzaku.jpeg" alt="suzaku" /></div>
+                    <div className='folder-preview-img'><Image src="./imgs/laluach2.jpeg" alt="laluach2" /></div>
+                    <div className='folder-preview-img'><Image src="./imgs/kellen.jpeg" alt="kellen" /></div>
 
                 </div>
                 <div className='folder-wrapper'>
@@ -198,4 +199,4 @@ const page = () => {
   )
 }
 
-export default page
+export default usePage
