@@ -55,7 +55,48 @@ const page = () => {
                     });
                 });
             });
+
+            folder.addEventListener("mouseleave", () => {
+                if (isMobile) return;
+
+                folders.forEach((siblingFolder) => {
+                    siblingFolder.classList.remove("disabled");
+                });
+
+                gsap.to(folderWrappers[index], {
+                    y: 25,
+                    duration: 0.25,
+                    ease: "back.out(1.7)"
+                });
+
+                previewImages.forEach((img, imgIndex) => {
+                    gsap.to(img, {
+                        y: "0%",
+                        rotation: 0,
+                        duration: 0.25,
+                        ease: "back.out(1.7)",
+                        delay: imgIndex * 0.05
+                    });
+                });
+            });
         });
+
+        window.addEventListener("resize", () => {
+            const currentBreakpoint = window.innerWidth < 1000;
+            if (currentBreakpoint !== isMobile) {
+                isMobile = currentBreakpoint;
+                setInitialPosition();
+
+                folders.forEach((folder) => {
+                    folder.classList.remove("disabled");
+                });
+
+                const allPreviewImages = document.querySelectorAll(".folder-preview-img");
+                gsap.set(allPreviewImages, { y: "0%", rotation: 0});
+            }
+        });
+
+        setInitialPosition();
 
     }, [])
 
