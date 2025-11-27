@@ -1,0 +1,41 @@
+:root {
+    --base-100: #fff;
+    --base-100: #2a2a2a;
+    --base-100: #1f1f1f;
+    --base-100: #0f0f0f;
+    --base-100: #fb4016;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Geist Mono', sans-serif;
+}
+
+a, p {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: -0.0125rem;
+    line-height: 1;
+    display: inline-block;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    z-index: 2;
+}
+
+.nav-logo, .nav-cta {
+    flex: 1;
+    display: flex;
+}
