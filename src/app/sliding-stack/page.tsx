@@ -70,17 +70,18 @@ const slidingStack = () => {
     container?.addEventListener(
       "wheel",
       (e) => {
-        e.preventDefault();
+        const wheelEvent = e as WheelEvent;
+        wheelEvent.preventDefault();
 
         if (isSliderAnimating || isWheelActive) return;
 
-        wheelAccumulator += Math.abs(e.deltaY);
+        wheelAccumulator += Math.abs(wheelEvent.deltaY);
 
         if (wheelAccumulator >= wheelThreshold) {
           isWheelActive = true;
           wheelAccumulator = 0;
 
-          const direction = e.deltaY > 0 ? "down" : "up";
+          const direction = wheelEvent.deltaY > 0 ? "down" : "up";
           handleSlideChange(direction);
 
           setTimeout(() => {
@@ -99,10 +100,11 @@ const slidingStack = () => {
     container?.addEventListener(
       "touchstart",
       (e) => {
+        const touchEvent = e as TouchEvent;
         if (isSliderAnimating || isTouchActive) return;
 
-        touchStartY = e.touches[0].clientY;
-        touchStartX = e.touches[0].clientX;
+        touchStartY = touchEvent.touches[0].clientY;
+        touchStartX = touchEvent.touches[0].clientX;
       },
       { passive: true }
     );
@@ -111,10 +113,11 @@ const slidingStack = () => {
     container?.addEventListener(
       "touchend",
       (e) => {
+        const touchEvent = e as TouchEvent;
         if (isSliderAnimating || isTouchActive) return;
 
-        const touchEndY = e?.changedTouches[0].clientY;
-        const touchEndX = e?.changedTouches[0].clientX;
+        const touchEndY = touchEvent?.changedTouches[0].clientY;
+        const touchEndX = touchEvent?.changedTouches[0].clientX;
         const deltaY = touchStartY - touchEndY;
         const deltaX = touchStartX - touchEndX;
 
@@ -244,7 +247,7 @@ const slidingStack = () => {
         opacity: 0
       });
 
-      let slideQueue = Array.from(slider?.querySelectorAll('.slide'));
+      let slideQueue = Array.from(slider?.querySelectorAll('.slide') || []);
       
       slideQueue.forEach((slide, i) => {
         let targetPosition = i;
