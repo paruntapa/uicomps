@@ -6,7 +6,7 @@ import gsap from 'gsap';
 import { lockFont } from './lock';
 import Image from 'next/image';
 
-const usePage = () => {
+const Pattradhara = () => {
 
     useEffect(() => {
 
@@ -199,4 +199,4 @@ const usePage = () => {
   )
 }
 
-export default usePage
+export default Pattradhara;

@@ -1,6 +1,7 @@
+import Image from 'next/image'
 import './vairagyamenu.css'
 
-const vairagyamenu = () => {
+const VairagyaMenu = () => {
     return (
         <div>
             <div className='menu-drop-zone'>
@@ -9,7 +10,7 @@ const vairagyamenu = () => {
 
             <div className='menu-drawer'>
                 <div className='menu-logo'>
-                    <img src="/imgs/vairagyamenu/Bun.svg" alt="LOGO" className='h-12 w-12'/>
+                    <Image src="/imgs/vairagyamenu/Bun.svg" width={50} height={50} alt="LOGO"/>
                 </div>
 
                 <div className='menu-items'>
@@ -33,4 +34,4 @@ const vairagyamenu = () => {
     )
 }
 
-export default vairagyamenu;
+export default VairagyaMenu;

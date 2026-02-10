@@ -10,7 +10,7 @@ interface slideType {
   image: string
 }
 
-const slidingStack = () => {
+const SlidingStack = () => {
 
   const slideData: slideType[] = [
     {title: "Gojo Saturo",  image: '/imgs/slidingstack/gojo.jpg'},
@@ -149,16 +149,16 @@ const slidingStack = () => {
     };
 
     const handleScrollDown = () => {
-      let slides = document.querySelectorAll('.slide');
-      let firstSlide = slides[0];
+      const slides = document.querySelectorAll('.slide');
+      const firstSlide = slides[0];
 
       frontSlideIndex = (frontSlideIndex + 1 ) % slideData.length;
 
-      let newBackIndex = (frontSlideIndex + 4 ) % slideData.length;
+      const newBackIndex = (frontSlideIndex + 4 ) % slideData.length;
 
-      let nextSlideData = slideData[newBackIndex];
+      const nextSlideData = slideData[newBackIndex];
 
-      let newSlide = document.createElement('div');
+      const newSlide = document.createElement('div');
       newSlide.className = "slide";
       newSlide.innerHTML = `
                 <img src="${nextSlideData.image}" 
@@ -168,8 +168,8 @@ const slidingStack = () => {
                 <h1 class="slide-title">${nextSlideData.title}</h1>
       `;
 
-      let newTitle = newSlide.querySelector('.slide-title');
-      let newSplit = new SplitText(newTitle, {
+      const newTitle = newSlide.querySelector('.slide-title');
+      const newSplit = new SplitText(newTitle, {
         type: "words",
         mask: "words"
       });
@@ -186,10 +186,10 @@ const slidingStack = () => {
         opacity: 0
       });
 
-      let allSlides = document.querySelectorAll(".slide");
+      const allSlides = document.querySelectorAll(".slide");
 
       allSlides.forEach((slide, i) => {
-        let targetPosition = i - 1;
+        const targetPosition = i - 1;
 
         gsap.to(slide, {
           y: -15 + 15 * targetPosition + "%",
@@ -216,13 +216,13 @@ const slidingStack = () => {
     };
 
     const handleScrollUp = () => {
-      let slides = document.querySelectorAll(".slide");
-      let lastSlide = slides[slides.length - 1];
+      const slides = document.querySelectorAll(".slide");
+      const lastSlide = slides[slides.length - 1];
 
       frontSlideIndex = (frontSlideIndex - 1 + slideData.length) % slideData.length
-      let prevSlideData = slideData[frontSlideIndex];
+      const prevSlideData = slideData[frontSlideIndex];
 
-      let newSlide = document.createElement('div');
+      const newSlide = document.createElement('div');
 
       newSlide.className = "slide";
       newSlide.innerHTML = `
@@ -233,7 +233,7 @@ const slidingStack = () => {
                 <h1 class="slide-title">${prevSlideData.title}</h1>
       `
 
-      let newTitle = newSlide.querySelector(".slide-title");
+      const newTitle = newSlide.querySelector(".slide-title");
       new SplitText(newTitle, {
         type: "words",
         mask: "words"
@@ -247,10 +247,10 @@ const slidingStack = () => {
         opacity: 0
       });
 
-      let slideQueue = Array.from(slider?.querySelectorAll('.slide') || []);
+      const slideQueue = Array.from(slider?.querySelectorAll('.slide') || []);
       
       slideQueue.forEach((slide, i) => {
-        let targetPosition = i;
+        const targetPosition = i;
 
         gsap.to(slide, {
           y: -15 + 15 * targetPosition + "%",
@@ -268,7 +268,7 @@ const slidingStack = () => {
       });
     }
 
-  }, [])
+  }, [slideData])
   
   return (
     <div>
@@ -309,4 +309,4 @@ const slidingStack = () => {
   )
 }
 
-export default slidingStack
+export default SlidingStack;
